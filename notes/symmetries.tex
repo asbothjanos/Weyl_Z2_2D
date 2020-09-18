@@ -1,0 +1,306 @@
+\documentclass[aps,prb,twocolumn,showpacs,superscriptaddress,10p,longbibliography]{revtex4-1}
+%\bibliographystyle{apsrev}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage[colorlinks=true,linkcolor=red, citecolor = magenta]{hyperref}
+\usepackage{gensymb}
+\usepackage[sort&compress]{natbib}
+\usepackage[shortlabels]{enumitem}
+\usepackage{scalerel}
+\usepackage{dsfont}
+%Defined commands
+%=====================================================================
+\newcommand{\uu}{\uparrow}
+\newcommand{\dd}{\downarrow}
+
+\newcommand{\expect}[1]{\langle{#1}\rangle}
+\newcommand{\ket}[1]{|{#1}\rangle}
+\newcommand{\bra}[1]{\langle{#1}|}
+\newcommand{\braket}[2]{\langle{#1}|{#2}\rangle}
+\newcommand{\abs}[1]{\left|{#1}\right|}
+
+\newcommand{\rre}{\mathrm{Re}\,} 
+\newcommand{\iim}{\mathrm{Im}\,} 
+
+\newcommand{\Tr}{\mathrm{Tr}}
+
+\newcommand{\rr}{\vec{r}}
+\newcommand{\AAA}{\vec{A}}
+
+\newcommand{\aalpha}{\boldsymbol{\alpha}}
+\newcommand{\bbeta}{\boldsymbol{\beta}}
+\newcommand{\ttheta}{\boldsymbol{\theta}}
+\newcommand{\pphi}{\boldsymbol{\varphi}}
+\newcommand{\ssigma}{\hat{\boldsymbol{\sigma}}}
+
+\newcommand{\Hbdg}{\mathcal{H}}
+
+\begin{document}
+
+\title{Inversion symmetry in the extended BHZ model} \author{J\'anos K. Asb\'oth}
+\affiliation{Department of Theoretical Physics and BME-MTA Exotic
+  Quantum Phases Research Group, Budapest University of Technology and
+  Economics, H-1111 Budapest, Hungary}
+\affiliation{Institute for Solid State Physics and
+  Optics, Wigner Research Centre, H-1525 Budapest P.O. Box 49,
+  Hungary}
+\email{janos.asboth@wigner.hu}
+\date{\today}
+
+\begin{abstract}
+  
+\end{abstract}
+
+\maketitle
+
+We first review the standard BdG setting for symmetries, and how
+inversion symmetry appears here, and how to transition to a chiral basis.
+
+We then discuss how the BHZ model fits into this framework.
+
+\section{Standard BdG for time-reversal symmetric superconductors (DIII)}
+
+A superconductor in the mean-field approximation can be described by a
+single-particle Bogoliubov-de Gennes (BdG) Hamiltonian $\Hbdg$. This
+has the form, 
+\begin{align}
+  \Hbdg &= \begin{pmatrix} 
+    h & \Delta \\ 
+    -\Delta^\ast & -h^\ast \end{pmatrix}. 
+\end{align}
+Here $h$ and $\Delta$ are possibly quite large matrices. 
+Using $\tau_{x,y,z}$ to denote Pauli matrices acting on the blocks
+here, this has particle-hole symmetry by construction,
+\begin{align}
+  \mathcal{P} &= \tau_x K; &
+  \tau_x K \Hbdg K \tau_x &= -\Hbdg,
+\end{align}
+with $K$ representing complex conjugation in position basis. 
+
+We are interested in superconductors with time-reversal symmetry (that
+squares to -1). Time-reversal is usually represented by
+\begin{align}
+  \mathcal{T} = \sigma_y K,
+\end{align}
+where $\sigma_{x,y,z}$ act on spin (or in general some internal degree
+of freedom). This should act on the BdG Hamiltonian block by block,
+i.e., we need
+\begin{align}
+  [\sigma_y,\tau_x] = 0,
+\end{align}
+which holds if we have a tensor product structure.
+
+If we have both particle-hole and time-reversal symmetries, their
+product, chiral symmetry, is also a symmetry of the system. This is
+represented in the standard basis used above by
+\begin{align}
+  \hat\Gamma &= \tau_x \sigma_y
+  = \begin{pmatrix} 0 & 0 & 0 & -i\\
+    0 & 0 & i & 0\\
+    0 & -i & 0 & 0\\
+    i & 0 & 0 & 0
+  \end{pmatrix}.
+\end{align}
+Although this looks like a $4\times 4$ matrix, there could be any
+number of internal states, and so each number in the matrix above
+can correspond to a unit matrix. 
+
+\subsection{Chiral basis}
+
+We are interested in transforming the Hamiltonian to the chiral basis, where
+chiral symmetry is represented by 
+\begin{align}
+  \tilde{\Gamma} = \tau_z.
+\end{align}
+To achieve this transformation, we diagonalize $\hat{\Gamma}$.
+\begin{align}
+  \hat{\Gamma} &= ||| \, \diagdown \equiv = \mathcal{O} \tau_z \mathcal{O}^\dagger;\\
+  \mathcal{O} &= \frac{1}{\sqrt 2}
+  \begin{pmatrix} 1 & 0 & 1 & 0\\
+    0 & 1 & 0 & 1 \\
+    0 & -i & 0 & i\\
+    i & 0 & -i & 0
+  \end{pmatrix} =
+  \frac{1}{\sqrt 2}
+  \begin{pmatrix}
+    1 & 1 \\ \sigma_y & -\sigma_y.
+    \end{pmatrix}
+\end{align}
+The transformation works by conjugating with $\mathcal{O}$ above,
+which gives for the particle-hole and time-reversal symmetries,
+\begin{align}
+  \tau_x K &\to \frac{1}{2}
+  \begin{pmatrix}
+    1 & \sigma_y \\ 1 & -\sigma_y
+  \end{pmatrix}
+  \begin{pmatrix}  0 & 1 \\ 1 & 0 \end{pmatrix} K  
+  \begin{pmatrix}
+    1 & 1 \\ \sigma_y & -\sigma_y
+  \end{pmatrix} \nonumber \\
+  = \frac{1}{2}
+  \begin{pmatrix}
+    1 & \sigma_y \\ 1 & -\sigma_y
+  \end{pmatrix}&
+  \begin{pmatrix}
+   -\sigma_y & \sigma_y \\ 1 & 1
+  \end{pmatrix}
+  K =
+  \begin{pmatrix}
+   0 & \sigma_y \\ -\sigma_y &0
+  \end{pmatrix} K
+  =
+  i \tau_y \sigma_y K,
+\end{align}
+where we can drop the factor $i$ at the end for simplicity.
+Similarly, for time reversal,  
+\begin{align}
+  \sigma_y K &\to \tau_x \sigma_y K.
+\end{align}
+
+In the chiral basis, the BdG Hamiltonian is block off-diagonal.
+\begin{align}
+  \Hbdg &= \begin{pmatrix} 0 & D \\ D^\dagger & 0 \end{pmatrix}.
+\end{align}
+The particle-hole symmetry acts on $D$ by:
+\begin{align}
+  D \to -\sigma_y D^T \sigma_y,
+\end{align}
+as can be checked by calculation. 
+For the bulk momentum-space Hamiltonian, the requirement of particle-hole
+symmetry, $\Hbdg = - \mathcal{P}\Hbdg\mathcal{P}^{-1}$ thus translates to
+\begin{align}
+  D(k) &= \sigma_y D(-k)^T \sigma_y.
+\end{align}
+As a consequence, in this basis,
+\begin{align}
+ \label{eq:detD1}
+  \det D(k) = \det D(-k).
+\end{align}
+
+A consequence of the above is that winding number of $\det D(k)$
+around some momentum point $k_0$ is the same as around its
+time-reversed partner, $-k_0$. Thus topologically protected Weyl nodes
+come in pairs, where members of a pair have equal charges. Because the
+net sum of all charges in the Brillouin zone has to be 0, Weyl nodes
+should come in groups of 4. This was Benjamin Beri's statement.
+
+\subsection{Inversion symmetry}
+
+Inversion is an operation that acts in real space by inversion through
+a center. In momentum space this changes $k \leftrightarrow -k$, but
+it can also change the internal states by some unitary $\hat J$.
+
+We expect inversion to not affect the particle/hole degree of
+freedom. Not sure about spin, probably should not affect spin
+either. So it should act elementwise in the chiral basis as
+well. Thus inversion symmetry gives
+\begin{align}
+  D(k) = \hat{J} D(-k) \hat{J}^\dagger.
+\end{align}
+This requires
+\begin{align}
+  \det D(k) = \det D(-k),
+\end{align}
+which is the same requirement as that due to particle-hole symmetry,
+Eq.~\eqref{eq:detD1}.
+
+
+\section{Our case, in special basis}
+
+We are investigating the BHZ model, where we interpret the Hamiltonian
+as a BdG Hamiltonian. Here the bulk momentum-space Hamiltonian reads,
+\begin{align}
+  \label{eq:coupled_BHZ}
+  H(k) &=
+  \begin{pmatrix}
+  A(k) & B(k) & 0 & -C \\
+  B(k)^\ast & -A(k) & C & 0 \\
+  0 & C & A(k) & -B(k)^\ast \\
+  -C & 0 & -B(k) & A(k),
+  \end{pmatrix}
+\end{align}
+with
+\begin{align}
+  A(k) &= u + v_x \cos k_x + \cos k_y;\\
+  B(k) &= v_x \sin k_x - i\sin k_y,
+\end{align}
+and with $()^\ast$ denoting elementwise complex conjugation (without
+changing sign of momentum).  This is just two layers of QWZ model,
+with time-reversal symmetry built into the model.
+The coupling between the layers is such that time reversal
+symmetry, represented by
+\begin{align}
+  \mathcal{T} &= \tau_y K,
+\end{align}
+is respected.
+We happen to also have particle-hole symmetry, with 
+\begin{align}
+  \mathcal{T} &= \sigma_x K.
+\end{align}
+
+We can rewrite the coupled BHZ model to the ``standard basis'' above, and find
+\begin{align}
+  \Hbdg(k) &=
+  \begin{pmatrix}
+  A(k) & 0 & B(k) & -C \\
+  0 & A(k) & C & -B(k)^\ast \\
+  B(k)^\ast & C & -A(k) & 0 \\
+  -C & -B(k) & 0 & -A(k),
+  \end{pmatrix}
+\end{align}
+Seen as a BdG Hamiltonian, this is somewhat peculiar. The Hamiltonian
+$h(k)$ is just a nn hopping on a square lattice, spin independent.
+The superconducting order parameter is momentum dependent, but in a
+somewhat weird way.
+
+\subsection{Our inversion symmetry}
+
+The BHZ model, without the coupling, has an inversion
+symmetry that commutes with time reversal. It is represented by
+\begin{align}
+  \hat{J} &= \hat{\sigma}_z.
+\end{align}
+
+When interpreting the $\sigma$ matrices as particle-hole operators,
+all we do is replace $\sigma \leftrightarrow \tau$, the inversion
+becomes peculiar, it is $\hat{J} =\tau_z$. In the language of the BdG
+Hamiltonian, it requires
+\begin{align}
+  h(k) &= h(-k);&   \Delta(k) &= -\Delta(-k). 
+\end{align}
+The coupling via $C$ breaks inversion symmetry.
+
+In the chiral basis, this inversion symmetry of ours is transformed to:
+\begin{align}
+\hat{J} \to \tau_x.
+\end{align}
+Therefore, this inversion symmetry requires
+\begin{align}
+  D(k) &= D^\dagger(-k),
+\end{align}
+which entails
+\begin{align}
+  \det D(k) &= \det D(-k)^\ast.
+\end{align}
+Together with particle-hole symmetry, Eq.~\eqref{eq:detD1}, this
+amounts to
+\begin{align}
+  \det D(k) \in \mathbb{R}. 
+\end{align}
+
+Thus our inversion symmetry excludes the presence of topologically
+protected Weyl nodes, because it prevents $\det D(k)$ from having a
+phase that could wind. 
+
+\section{Questions}
+
+Our inversion is pretty specific. What property does it have that
+prevents protected Weyl nodes?
+
+
+\end{document}
